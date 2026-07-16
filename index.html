@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CloudVault — Personal File Portal</title>
+<meta name="description" content="A personal file hosting and sharing portal backed by GitHub." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to content</a>
+
+<div class="app-shell">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="brand-mark">CV</span><span class="js-site-name">CloudVault</span></div>
+
+    <nav>
+      <div class="nav-section-label">Library</div>
+      <ul class="nav-list" id="navList">
+        <li><button class="nav-item active" data-category="all"><span class="dot" style="background:var(--text-muted)"></span>All files<span class="count">0</span></button></li>
+        <li><button class="nav-item" data-category="documents"><span class="dot" style="background:var(--cat-documents)"></span>Documents<span class="count">0</span></button></li>
+        <li><button class="nav-item" data-category="images"><span class="dot" style="background:var(--cat-images)"></span>Images<span class="count">0</span></button></li>
+        <li><button class="nav-item" data-category="videos"><span class="dot" style="background:var(--cat-videos)"></span>Videos<span class="count">0</span></button></li>
+        <li><button class="nav-item" data-category="audio"><span class="dot" style="background:var(--cat-audio)"></span>Audio<span class="count">0</span></button></li>
+        <li><button class="nav-item" data-category="archives"><span class="dot" style="background:var(--cat-archives)"></span>Archives<span class="count">0</span></button></li>
+        <li><button class="nav-item" data-category="others"><span class="dot" style="background:var(--cat-others)"></span>Others<span class="count">0</span></button></li>
+      </ul>
+    </nav>
+
+    <div class="storage-meter">
+      <div id="storageLabel">0 B used</div>
+      <div class="bar"><div class="bar-fill" id="storageFill" style="width:0%"></div></div>
+      <div>Synced from your GitHub repository</div>
+    </div>
+  </aside>
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="searchInput" type="text" placeholder="Search by name, extension, or tag…" aria-label="Search files" />
+    </div>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="btn btn-primary" id="openUploadBtn"><span>⬆️</span><span class="btn-label">Upload</span></button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main" id="mainContent">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Your files</h1>
+        <p class="page-subtitle" id="pageSubtitle">Loading…</p>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="documents">📄 Documents</button>
+      <button class="chip" data-filter="images">🖼️ Images</button>
+      <button class="chip" data-filter="videos">🎬 Videos</button>
+      <button class="chip" data-filter="audio">🎧 Audio</button>
+      <button class="chip" data-filter="archives">🗜️ Archives</button>
+      <button class="chip" data-filter="others">📦 Others</button>
+      <span class="spacer"></span>
+      <select class="sort-select" id="sortSelect" aria-label="Sort files">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="largest">Largest first</option>
+        <option value="smallest">Smallest first</option>
+        <option value="az">Alphabetical (A–Z)</option>
+        <option value="type">File type</option>
+      </select>
+      <div class="view-toggle">
+        <button id="viewGridBtn" class="active" aria-label="Grid view" title="Grid view">▦</button>
+        <button id="viewListBtn" aria-label="List view" title="List view">☰</button>
+      </div>
+    </div>
+
+    <div class="file-grid" id="fileGrid" aria-live="polite">
+      <div class="skeleton" style="height:220px;"></div>
+      <div class="skeleton" style="height:220px;"></div>
+      <div class="skeleton" style="height:220px;"></div>
+      <div class="skeleton" style="height:220px;"></div>
+    </div>
+  </main>
+</div>
+
+<!-- Upload modal -->
+<div class="modal-overlay" id="uploadModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="uploadModalTitle">
+    <div class="modal-header">
+      <h2 id="uploadModalTitle">Upload files</h2>
+      <button class="icon-btn" id="closeUploadBtn" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label for="ghTokenInput">GitHub personal access token (repo scope)</label>
+        <div style="display:flex; gap:8px;">
+          <input type="password" id="ghTokenInput" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" style="flex:1;" />
+          <button class="btn btn-ghost btn-sm" id="ghTokenSaveBtn">Save</button>
+        </div>
+        <p class="field-hint" id="ghTokenStatus">No token saved yet — required to upload.</p>
+        <p class="field-hint">Stored only in this browser's localStorage. Never committed, never sent anywhere but api.github.com.</p>
+      </div>
+
+      <div class="field">
+        <label for="categoryOverride">Category</label>
+        <select id="categoryOverride">
+          <option value="auto">Auto-detect from file type</option>
+          <option value="documents">Documents</option>
+          <option value="images">Images</option>
+          <option value="videos">Videos</option>
+          <option value="audio">Audio</option>
+          <option value="archives">Archives</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+
+      <div class="dropzone" id="dropzone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+        <p><strong>Drag & drop</strong> files here, or click to choose</p>
+        <p class="field-hint">Multiple files supported · duplicates are detected automatically</p>
+        <input type="file" id="fileInput" multiple hidden />
+      </div>
+
+      <div class="upload-queue" id="uploadQueue"></div>
+
+      <button class="btn btn-primary" id="startUploadBtn" style="align-self:flex-start;">Start upload</button>
+      <p class="field-hint">New files appear on the dashboard once GitHub Actions rebuilds the index — usually within a minute.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close preview">✕</button>
+  <img id="lightboxImg" src="" alt="" />
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/github-api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/upload.js"></script>
+</body>
+</html>

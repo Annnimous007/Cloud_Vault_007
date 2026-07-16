@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>File · CloudVault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to content</a>
+
+<header class="topbar" style="position:static; padding: 0 20px;">
+  <a href="index.html" class="brand" style="text-decoration:none;">
+    <span class="brand-mark">CV</span><span class="js-site-name">CloudVault</span>
+  </a>
+  <span class="spacer"></span>
+  <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  <a class="btn btn-ghost" href="index.html">← Back to library</a>
+</header>
+
+<main class="main" id="mainContent" style="max-width:1100px; margin:0 auto;">
+  <div id="notFound" class="empty-state" style="display:none; margin-top:40px;">
+    <h3>File not found</h3>
+    <p>This link may be broken, or the file may have been removed from the repository.</p>
+    <a class="btn btn-primary" href="index.html" style="margin-top:12px; display:inline-flex;">Go to library</a>
+  </div>
+
+  <div id="detailWrap" style="margin-top:20px;">
+    <div class="detail-grid">
+      <section class="preview-panel" id="previewPanel">
+        <div class="skeleton" style="width:100%; height:320px;"></div>
+      </section>
+
+      <section class="info-panel">
+        <h2 class="info-title" id="infoTitle">Loading…</h2>
+        <div id="infoRows"></div>
+
+        <div class="field">
+          <label>Shareable link</label>
+          <div class="link-copy">
+            <input id="shareLinkInput" type="text" readonly />
+            <button class="btn btn-ghost btn-sm" id="copyLinkBtn">Copy</button>
+          </div>
+        </div>
+
+        <a class="btn btn-primary" id="downloadBtn" href="#" download>⬇️ Download</a>
+
+        <div class="qr-box">
+          <img id="qrImg" width="140" height="140" alt="QR code" />
+          <span class="field-hint">Scan to open on another device</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/viewer.js"></script>
+</body>
+</html>
