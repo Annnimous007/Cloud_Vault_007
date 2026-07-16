@@ -1,19 +1,5 @@
 {
-  "generatedAt": "2026-07-16T15:00:08.458Z",
-  "fileCount": 1,
-  "files": [
-    {
-      "id": "documents/IT_2.1_answers.pdf",
-      "name": "IT_2.1_answers.pdf",
-      "category": "documents",
-      "ext": "pdf",
-      "size": 469556,
-      "sizeLabel": "458.6 KB",
-      "uploadedAt": "2026-07-16T20:23:37+05:30",
-      "path": "uploads/documents/IT_2.1_answers.pdf",
-      "url": "uploads/documents/IT_2.1_answers.pdf",
-      "hash": "ecc967ae22e4b10ff0441b5c2cf75f046a61e6982b4c60ac4ce7da54a08872c7",
-      "tags": []
-    }
-  ]
+  "generatedAt": "2026-07-16T15:04:14.573Z",
+  "fileCount": 0,
+  "files": []
 }
