@@ -1,7 +1,20 @@
 {
-  "generatedAt": "2026-07-16T14:54:02.629Z",
-  "fileCount": 1,
+  "generatedAt": "2026-07-16T14:55:55.676Z",
+  "fileCount": 2,
   "files": [
+    {
+      "id": "images/ChatGPT_Image_Jul_12__2026__08_47_00_PM.png",
+      "name": "ChatGPT_Image_Jul_12__2026__08_47_00_PM.png",
+      "category": "images",
+      "ext": "png",
+      "size": 1982139,
+      "sizeLabel": "1.9 MB",
+      "uploadedAt": "2026-07-16T20:25:42+05:30",
+      "path": "uploads/images/ChatGPT_Image_Jul_12__2026__08_47_00_PM.png",
+      "url": "uploads/images/ChatGPT_Image_Jul_12__2026__08_47_00_PM.png",
+      "hash": "6ecf518edeaeea3cf648440d05b566486c480bc891efd323d3a3805bc281ab8d",
+      "tags": []
+    },
     {
       "id": "documents/IT_2.1_answers.pdf",
       "name": "IT_2.1_answers.pdf",
