@@ -5,12 +5,12 @@
  * Nothing else in the codebase needs to change to point the site at your repo.
  */
 window.CLOUDVAULT_CONFIG = {
-  githubOwner: "your-github-username",
-  githubRepo: "your-repo-name",
-  branch: "main",
+ githubOwner: "Annnimous007",
+ githubRepo: "Cloud_Vault_007",
+ branch: "main",
 
   // Shown in the sidebar / page title.
-  siteName: "CloudVault",
+  siteName: "Cloud Vault 007",
   siteTagline: "Personal file portal",
 
   // Soft cap used only for the sidebar storage meter (GitHub has no real quota
