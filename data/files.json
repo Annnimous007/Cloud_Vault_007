@@ -1,5 +1,19 @@
 {
-  "generatedAt": "2026-07-16T15:04:14.573Z",
-  "fileCount": 0,
-  "files": []
+  "generatedAt": "2026-07-18T13:44:41.255Z",
+  "fileCount": 1,
+  "files": [
+    {
+      "id": "documents/Cost_Accounting_Assignment_-_2.1.pdf",
+      "name": "Cost_Accounting_Assignment_-_2.1.pdf",
+      "category": "documents",
+      "ext": "pdf",
+      "size": 330772,
+      "sizeLabel": "323.0 KB",
+      "uploadedAt": "2026-07-18T19:14:28+05:30",
+      "path": "uploads/documents/Cost_Accounting_Assignment_-_2.1.pdf",
+      "url": "uploads/documents/Cost_Accounting_Assignment_-_2.1.pdf",
+      "hash": "493487ec425311c740e89f6d2d8a134ffb2cd6905ad4c1787f1bfd7120bdfcff",
+      "tags": []
+    }
+  ]
 }
