@@ -1,7 +1,20 @@
 {
-  "generatedAt": "2026-07-20T11:38:32.182Z",
-  "fileCount": 1,
+  "generatedAt": "2026-07-20T11:40:20.847Z",
+  "fileCount": 2,
   "files": [
+    {
+      "id": "documents/Income Tax Assignment 2.2.pdf",
+      "name": "Income Tax Assignment 2.2.pdf",
+      "category": "documents",
+      "ext": "pdf",
+      "size": 1903064,
+      "sizeLabel": "1.8 MB",
+      "uploadedAt": "2026-07-20T17:10:01+05:30",
+      "path": "uploads/documents/Income Tax Assignment 2.2.pdf",
+      "url": "uploads/documents/Income Tax Assignment 2.2.pdf",
+      "hash": "2fa774fdbb1efbee07bd84efbcff0addadd9a0c9ca2c929f77e4d0658c615630",
+      "tags": []
+    },
     {
       "id": "documents/Cost_Accounting_Assignment_-_2.1.pdf",
       "name": "Cost_Accounting_Assignment_-_2.1.pdf",
