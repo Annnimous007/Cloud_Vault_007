@@ -1,20 +1,7 @@
 {
-  "generatedAt": "2026-07-20T11:36:45.551Z",
-  "fileCount": 2,
+  "generatedAt": "2026-07-20T11:38:32.182Z",
+  "fileCount": 1,
   "files": [
-    {
-      "id": "documents/Unit2.2_QA_IncomeTax.pdf",
-      "name": "Unit2.2_QA_IncomeTax.pdf",
-      "category": "documents",
-      "ext": "pdf",
-      "size": 9126,
-      "sizeLabel": "8.9 KB",
-      "uploadedAt": "2026-07-20T17:06:30+05:30",
-      "path": "uploads/documents/Unit2.2_QA_IncomeTax.pdf",
-      "url": "uploads/documents/Unit2.2_QA_IncomeTax.pdf",
-      "hash": "8c63fcf7d559929a2f8cae20e7be05ce5c10f9205d1b4bf0af25e0cef598b9b4",
-      "tags": []
-    },
     {
       "id": "documents/Cost_Accounting_Assignment_-_2.1.pdf",
       "name": "Cost_Accounting_Assignment_-_2.1.pdf",
