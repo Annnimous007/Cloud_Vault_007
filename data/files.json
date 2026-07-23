@@ -1,7 +1,20 @@
 {
-  "generatedAt": "2026-07-20T11:40:20.847Z",
-  "fileCount": 2,
+  "generatedAt": "2026-07-23T02:37:54.862Z",
+  "fileCount": 3,
   "files": [
+    {
+      "id": "documents/Indirect Taxation_Assignment_2.1.pdf",
+      "name": "Indirect Taxation_Assignment_2.1.pdf",
+      "category": "documents",
+      "ext": "pdf",
+      "size": 11076,
+      "sizeLabel": "10.8 KB",
+      "uploadedAt": "2026-07-23T08:07:39+05:30",
+      "path": "uploads/documents/Indirect Taxation_Assignment_2.1.pdf",
+      "url": "uploads/documents/Indirect Taxation_Assignment_2.1.pdf",
+      "hash": "4d0c10c7d7fe572170da7466dc81ca9ad8f8bc0ede609e89371bdb5710f650ba",
+      "tags": []
+    },
     {
       "id": "documents/Income Tax Assignment 2.2.pdf",
       "name": "Income Tax Assignment 2.2.pdf",
